@@ -21,7 +21,7 @@ Create an online client for FTP servers.
 - [ ] Modify txt files online (?)
 
 > - [ ] Full compatibility with cell phones (Responsive Design).  
-> State of compatibility (Responsive Design): 100%
+> **Status: 100%**
 
 
 
