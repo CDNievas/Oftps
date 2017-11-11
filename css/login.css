@@ -1,0 +1,43 @@
+body {
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background-color: #EEEEEE;
+	color:#0D47A1;
+}
+
+div.signin{
+	max-width: 400px;
+	padding:15px;
+	margin:0 auto;
+	background-color: #BBDEFB;
+	border-radius: 4px;
+	
+}
+
+h1.logo,h4.logo{
+	text-align: center;
+}
+
+hr{
+	border-top: 2px dashed #1565C0;
+}
+
+h5.signin{
+	margin-top:20px 0px 10px 0px;
+}
+
+div.ipport{
+	display:block;
+	margin: 0 auto;
+	background:green;
+	clear: both;
+}
+
+input{
+	margin:5px 0px 0px 0px;
+}
+
+button.signin{
+	margin:15px 0px 0px 0px;
+}
+
