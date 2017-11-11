@@ -18,7 +18,7 @@ Create an online client for FTP servers.
 - [ ] Move files.
 - [ ] Drag and drop system to upload multiple files.
 - [ ] Online console to execute commands.
-- [ ] Full compatibility with cell phones (Responsive Design).
+> - [ ] Full compatibility with cell phones (Responsive Design).
 > State of compatibility (Responsive Design): 100%
 - [ ] Modify txt files online (?)
 
