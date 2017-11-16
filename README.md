@@ -20,7 +20,7 @@ Create an online client for FTP servers.
 - [ ] Online console to execute commands.
 - [ ] Modify txt files online (?)
 
-> - [ ] Full compatibility with cell phones (Responsive Design).  
+> - [ ] Full compatibility with mobile devices (Responsive Design).  
 > **Status: 100%**
 
 
