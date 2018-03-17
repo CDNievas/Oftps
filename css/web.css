@@ -1,0 +1,196 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+body {
+	font-family:Segoe UI;
+	padding-bottom: 40px;
+	background-color: #EEEEEE;
+	color:#0D47A1;
+	margin:0px;
+}
+
+div.container{
+	max-width:920px;
+	margin:0 auto;
+	padding:0;
+}
+
+div.header{
+	padding:15px;
+	margin:0 auto;
+	background-color: #BBDEFB;
+	overflow: hidden;
+}
+
+div.path{
+	display:block;
+	float:left;
+	padding:10px;
+}
+
+p.path{
+	margin:0;
+	text-align: center;
+	font-size:15px;
+	color:#0D47A1;
+}
+
+div.logout{
+	display:block;
+	float:right;
+}
+
+a.logout{
+	padding:10px;
+	background:#1565C0;
+	display:block;
+	color:#FFF;
+	text-decoration: none;
+}
+
+div.menu{
+	height:50px;
+	background:#024591;
+	border-radius:0px;
+	border:0px;
+	color:#fff;
+}
+
+div.table{
+	margin:0 auto;
+	display:block;
+}
+
+.files {
+	width:100%;
+	border: solid 1px #1565C0;
+	border-collapse: collapse;
+	border-spacing: 0;
+	font: normal 13px Arial, sans-serif;
+}
+
+.files thead th {
+	background-color: #1565C0;
+	border: solid 1px #1565C0;
+	color: #FFF;
+	padding: 10px;
+	text-align: left;
+}
+
+.files tbody td {
+	border: solid 1px #1565C0;
+	padding: 10px;
+	text-shadow: 1px 1px 1px #fff;
+	cursor:pointer;
+}
+
+.files-horizontal tbody td {
+	border-left: none;
+	border-right: none;
+}
+
+tr.selected{
+	color: #333;
+	background-color: #1565C0;
+}
+
+tr.unselected{
+	color: #333;
+	background:#FCFCFC;
+}
+
+td.check:hover{
+	cursor:default;
+}
+
+/* Popup CSS */
+.wrapPopup{
+	display:none;
+	position: fixed;
+	z-index:1;
+	left:0;
+	top:0;
+	height:100%;
+	width:100%;
+	overflow:auto;
+	background-color: rgba(0,0,0,0.6);
+}
+
+.wrapPopup .popup{
+	height:auto;
+	width:80%;
+	max-width:600px;
+	margin:5% auto;
+	display:block;
+	border-radius:8px;
+	overflow:hidden;
+	-moz-box-shadow: 0 0 5px #000;
+	-webkit-box-shadow: 0 0 5px #000;
+	box-shadow: 0 0 5px #000;
+}
+
+.wrapPopup .title{
+	width:100%;
+	display:block;
+	background:#71BBF2;
+	color:#0C63A4;
+	font-weight:700;
+	padding:5px;
+}
+
+.wrapPopup .title p{
+	margin:5px;
+}
+
+.wrapPopup .box{
+	width:100%;
+	display:block;
+	background:#DFDFDF;
+	padding:5px;
+	color:#3D3D3D;
+}
+
+.wrapPopup .box p{
+	margin:5px;
+}
+
+
+button.cancel{
+	padding:10px;
+	margin:10px 0px 10px 0px;
+	background:#B40404;
+	color:#DFDFDF;
+	border:3px solid #8A0808;
+	border-radius:5px;
+	font-weight:700;
+}
+
+button.accept{
+	padding:10px;
+	margin:10px 0px 10px 0px;
+	background:#088A08;
+	color:#DFDFDF;
+	border:3px solid #21610B;
+	border-radius:5px;
+	font-weight:700;
+}
+
+button.normal{
+	padding:10px;
+	margin:10px 0px 10px 0px;
+	background:#1C91E7;
+	color:#DFDFDF;
+	border:3px solid #0C63A4;
+	border-radius:5px;
+	font-weight:700;
+}
+
+@media screen and (max-width:450px){
+
+	table.files td:nth-child(4), table.files th:nth-child(4){
+		display:none;
+	}
+
+}

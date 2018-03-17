@@ -1,13 +1,11 @@
 <?php
-
-include 'functions.php';
-
+	
 session_start();
-if(isset($_SESSION['conn'])){
-	header('location:web/index.php');
-}
+include "auxiliar.php";
+detect_session(true,"ftp","web/index.php");
 
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -60,4 +58,3 @@ if(isset($_SESSION['conn'])){
 	
 	</body>
 </html>
-	

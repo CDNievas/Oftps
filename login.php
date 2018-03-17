@@ -1,45 +1,48 @@
 <?php
-
-include 'functions.php';
-include 'ConnParam.php';
-
-session_start();
-
-$connParam = new ConnParam($_POST['ipServer'],$_POST['portServer'],$_POST['username'],$_POST['password'],$_POST['connMode']);
-
-$conn = $connParam->getConnection();
-
-switch($conn){
 	
-	case 1:
+	session_start();
+	include "FTPClient.php";
+	include "debug.php";
+	include "auxiliar.php";
+	
+	$ipServer = $_POST["ipServer"];
+	$portServer = $_POST["portServer"];
+	$username = $_POST["username"];
+	$password = $_POST["password"];
+	$connMode = $_POST["connMode"];
+
+	// Generate connection
+	if(emptyFields($ipServer,$portServer,$username,$password,$connMode)){
 		set_message("Empty fields detected. Please try again.","danger");
 		header("location:index.php");
-		break;
-	
-	case 2:
+	} else if (illegalChars()){
 		set_message("Illegal chars detected. Please try again.","danger");
 		header("location:index.php");
-		break;
-	
-	case 3:
-		set_message("Can't access to the hosting. Please try again later.","danger");
-		header("location:index.php");
-		break;
-	
-	case 4:
-		set_message("User credentials are invalid. Please try again.","danger");
-		header("location:index.php");
-		break;
+	} else {
 		
-	case 5:
-		set_message("Failed using that connection mode. Please try again.","danger");
-		header("location:index.php");
-		break;
+		try {
+			$ftp = new FTPClient($ipServer,$portServer,$username,$password,$connMode);
+			$_SESSION["ftp"] = $ftp;
+			header("location:web/index.php");
+		} catch (ExceptionFTP $e){
+			set_message($e->getMessage(), $e->getType());
+			header("location:index.php");
+		}
 		
-	default:
-		$_SESSION['conn'] = $conn;
-		header("location:web/index.php");
+	}
+
+	function emptyFields($ipServer,$portServer,$username,$password,$connMode){
 		
-}
+		if(!isset($ipServer) || !isset($portServer) || !isset($username) || !isset($password) || !isset($connMode)){
+			return true;
+		} else {
+			return false;
+		}
+		
+	}
+
+	function illegalChars(){
+		return false;	
+	}
 
 ?>
