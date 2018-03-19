@@ -73,13 +73,17 @@
 		<meta name="author" content="">
 		
 		<title>Oftps</title>
-		
-		<!--<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
+		<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<link href="../css/web.css" rel="stylesheet">
+
 	</head>
 	<body>
 		
 		<div class="container">
+
+			<?php
+				show_message();
+			?>
 			
 			<div class="header">
 				<div class="path"><p class="path">Dir: <?php echo $actualPath; ?></p></div>
@@ -132,12 +136,14 @@
 				</div>
 				<div class="box">
 					<p>Write a name for the new folder.</p>
-					<input type="text" placeholder="Folder's name">
-					<center>
-						<button class="accept" onClick="">Create Folder</button>
-						<button class="cancel" onClick="">xd</button>
-						<button class="normal" onClick="closePopup('#newFolder')">Close Popup</button>
-					</center>
+					<form method="post" action="../actionListener.php">
+						<input name="nameFolder" type="text" placeholder="Folder's name">
+						<center>
+							<button class="accept" name="newFolder" type="submit">Create Folder</button>
+							<!-- <button class="cancel" onClick="">xd</button> -->
+							<button class="normal" onClick="closePopup('#newFolder')" type="button">Close Popup</button>
+						</center>
+					</form>
 				</div>
 			</div>
 		</div>

@@ -1,5 +1,5 @@
 <?php
-
+	
 	function set_message($text,$type){
 
 		/* Valid types:
@@ -37,6 +37,22 @@
 			}
 		}
 		
+	}
+
+	function emptyVars(){
+		
+		$bool = true;
+
+		for($i=0; func_num_args() > $i; $i++){
+			$bool = $bool && (func_get_arg($i)!=null);
+		}
+
+		return !$bool;
+		
+	}
+
+	function illegalChars(){
+		return false;	
 	}
 
 ?>

@@ -10,7 +10,7 @@ Create an online client for FTP servers.
 ### Goals
 - [x] Connect to FTP server.
 - [x] View of filesystem.
-- [ ] Create folders.
+- [x] Create folders.
 - [ ] Rename files.
 - [ ] Delete files.
 - [ ] Upload multiple files.

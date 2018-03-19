@@ -11,6 +11,10 @@ body {
 	margin:0px;
 }
 
+.alert {
+	margin: 20px 0px;
+}
+
 div.container{
 	max-width:920px;
 	margin:0 auto;

@@ -23,12 +23,6 @@ class FTPClient{
 
 	}
 
-	private function init(){
-		$this->connect();
-		$this->login();
-		$this->putConnMode();
-	}
-
 	public function getIpServer(){
 		return $this->ipServer;
 	}
@@ -61,7 +55,7 @@ class FTPClient{
 		$this->init();
 
 		if(!ftp_chdir($this->connection,$path)){
-			throw new ExceptionFTP("That directory doesn't exists",0,null,'warning');
+			throw new ExceptionFTP("That directory doesn't exists.",0,null,"warning");
 		} else {
 			$this->path = $path;
 		}
@@ -93,6 +87,29 @@ class FTPClient{
 
 		}
 
+	}
+
+	public function createFolder($name){
+		
+		$this->init();
+		$name = $this->getActualPath().$name;
+
+		if(ftp_chdir($this->connection,$name)){
+			throw new ExceptionFTP("That directory already exists.",0,null,"danger");
+		} else {
+			
+			if(!@ftp_mkdir($this->connection,$name)){
+				throw new ExceptionFTP("Can't create the folder.",0,null,"danger");
+			}
+
+		}
+
+	}
+
+	private function init(){
+		$this->connect();
+		$this->login();
+		$this->putConnMode();
 	}
 
 	private function connect(){

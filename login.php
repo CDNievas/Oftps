@@ -12,7 +12,7 @@
 	$connMode = $_POST["connMode"];
 
 	// Generate connection
-	if(emptyFields($ipServer,$portServer,$username,$password,$connMode)){
+	if(emptyVars($ipServer,$portServer,$username,$password,$connMode)){
 		set_message("Empty fields detected. Please try again.","danger");
 		header("location:index.php");
 	} else if (illegalChars()){
@@ -31,18 +31,5 @@
 		
 	}
 
-	function emptyFields($ipServer,$portServer,$username,$password,$connMode){
-		
-		if(!isset($ipServer) || !isset($portServer) || !isset($username) || !isset($password) || !isset($connMode)){
-			return true;
-		} else {
-			return false;
-		}
-		
-	}
-
-	function illegalChars(){
-		return false;	
-	}
 
 ?>
